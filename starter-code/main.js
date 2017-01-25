@@ -26,30 +26,31 @@ function isTwoCards() {
 	} else if (cardData === 'king') {
 		this.innerHTML = '<img src="img/king.png">';
 	}
-	
 	if (cardsInPlay.length === 2) {
 		isMatch(cardsInPlay);
-		
-		setTimeout(function () {
-			var cardsToReset = document.getElementsByClassName('card');
-			for (var i = 0; i < cardsToReset.length; i++) {					
-				cardsToReset[i].innerHTML = '';
-			}}, 1000);
-
-
-		console.log('clear!');
-
+		resetCardImg();
 		cardsInPlay = [];
 	}
-
+}
+function resetCardImg() {
+	setTimeout(function () {
+		var cardsToReset = document.getElementsByClassName('card');
+		for (var i = 0; i < cardsToReset.length; i++) {					
+			cardsToReset[i].innerHTML = '';
+		}}, 1000);
 }
 
 function isMatch(twoCardArr) {
+	var message = document.getElementById('message');
 	if (twoCardArr[0] === twoCardArr[1]) {
-		alert('match');
-		return true;
+		message.textContent = 'Match!';
 	} else {
-		alert('no match');
-		return false;
+		message.textContent = 'No Match';
 	}
+	resetMessage();
+}
+function resetMessage() {
+	setTimeout(function(){ 
+		message.textContent = ''; 
+	}, 1000);
 }

@@ -11,6 +11,9 @@ nav a {
 nav a:hover {
 	background-color: #ee5f3c;
 }
+p {
+	max-width:70%;
+}
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -18,21 +21,35 @@ nav a:hover {
     clear: both;
     height: 0;
     font-size: 0;
-  }
+}
+#message {
+	height: 100px;
+	width: 50%;
+	margin: 10px auto;
+	font-size: 70px;
+	text-align: center;
+	line-height: 100px;
+}
 .board {
 	height: 50%;
 	width: 50%;
 	display: inline-block;
+	border: 5px solid black;
+	margin: 0 25%;
+	background-color: #ffbf00;
+	border-radius: 10px;
 }
 .card {
 	float: left;
 	margin: 8%;
 	height: 200px;
 	width: 150px;
-	border: black 1px solid;
-	background-color: yellow;
+	background: url('img/cardback.png');
+	background-size: contain;
+	background-repeat: no-repeat;
 	border-radius: 10px;
 }
+
 img { 
 	height: 200px;
 	width: 150px;
